@@ -1,0 +1,12 @@
+- name: Install Octopus CLI 🐙
+  uses: OctopusDeploy/install-octopus-cli-action@v3
+  with:
+    version: '*'
+
+- name: list-octopusdeploy-accounts
+  env:
+    OCTOPUS_API_KEY: ${{ secrets.apiKey }}
+    OCTOPUS_URL: ${{ secrets.serverURL }}
+    OCTOPUS_SPACE: 'Outer Space'
+  run: >
+    octopus account list
