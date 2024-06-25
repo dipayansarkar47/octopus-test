@@ -34,3 +34,17 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      - name: Install Octopus CLI
+        uses: OctopusDeploy/install-octopus-cli-action@v3.0.0
+        with:
+          version: "*"
+
+      - name: list-octopusdeploy-accounts
+        env:
+          OCTOPUS_API_KEY: ${{ secrets.apiKey }}
+          OCTOPUS_URL: ${{ secrets.serverURL }}
+          OCTOPUS_SPACE: 'Outer Space'
+        run: >
+          octopus account list
+      
