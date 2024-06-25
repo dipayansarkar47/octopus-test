@@ -44,7 +44,7 @@ jobs:
         uses: OctopusDeploy/login@v1
         with:
           server: https://dipayan.octopus.app
-          api_key: ${{ secrets.OCTOPUS_API_KEY }}
+          api_key: ${{ secrets.OCTOPUS_SERVER_API_KEY }}
 
       - name: Create a release in Octopus
         uses: OctopusDeploy/create-release-action@v3
